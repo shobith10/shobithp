@@ -10,46 +10,35 @@ export const portfolioData = {
     about: [
         "With 4+ years of professional experience, I've developed a strong foundation in Flutter and cross-platform mobile development. My expertise spans from healthcare applications to e-commerce platforms and enterprise resource planning systems.",
         "I'm currently working at Grapes Innovative Solutions, where I contribute to multiple domains including hospital management systems, ERP solutions, and e-commerce platforms. My approach focuses on writing clean, maintainable code and creating intuitive user experiences.",
-        "I thrive in collaborative environments and enjoy mentoring junior developers. When not coding, I explore new technologies and contribute to open-source projects."
+        "I thrive in collaborative environments and enjoy mentoring junior developers. When not coding, I explore new technologies and contribute to open-source projects. To know more Google my name Shobith P 😄"
     ],
 
     experience: [
         {
-            title: "Flutter Developer",
+            title: "Lead Developer",
             company: "Grapes Innovative Solutions",
             period: "Current",
-            responsibilities: [
+            responsibilities: ["Led development of multiple production-grade Flutter applications",
                 "Developed and maintained multiple cross-platform mobile applications using Flutter",
                 "Implemented hospital management system with patient records and appointment scheduling",
-                "Built e-commerce platform with payment integration and real-time inventory management",
-                "Created ERP solutions for business operations and resource planning",
                 "Collaborated with UI/UX team to implement responsive and intuitive designs",
                 "Optimized app performance and ensured code quality through code reviews"
             ]
         },
         {
-            title: "Senior Flutter Developer",
-            company: "Previous Organization",
-            period: "2+ Years",
+            title: "Flutter Developer",
+            company: "Techgebra",
+            period: "1.4 Years",
             responsibilities: [
                 "Led development of multiple production-grade Flutter applications",
                 "Implemented Firebase integration for real-time data synchronization",
                 "Developed REST APIs and integrated backend services",
-                "Optimized app performance resulting in 40% faster load times",
-                "Conducted code reviews and mentored junior developers"
+                 "Built e-commerce platform with payment integration and real-time inventory management",
+                "Created ERP solutions for business operations and resource planning",
+              
             ]
         },
-        {
-            title: "Junior Flutter Developer",
-            company: "Previous Organization",
-            period: "1+ Year",
-            responsibilities: [
-                "Participated in full app lifecycle from design to deployment",
-                "Built UI components and integrated APIs",
-                "Fixed bugs and improved existing features",
-                "Learned best practices in mobile development"
-            ]
-        }
+      
     ],
 
     projects: [
@@ -64,7 +53,7 @@ export const portfolioData = {
             }
         },
         {
-            title: "GHLealth",
+            title: "GHealth",
             description: "Comprehensive health tracking application with fitness monitoring, medical records, and health analytics",
             technologies: ["Flutter", "Firebase", "Health API", "Charts"],
             icon: "❤️",
@@ -99,7 +88,6 @@ export const portfolioData = {
         mobile: [
             { name: "Flutter", proficiency: 95 },
             { name: "Dart", proficiency: 95 },
-            { name: "React Native", proficiency: 70 },
             { name: "Native Android", proficiency: 60 }
         ],
         backend: [
@@ -129,7 +117,7 @@ export const portfolioData = {
     achievements: [
         {
             title: "Multiple Production Apps",
-            description: "Developed 4+ production-grade applications serving thousands of users",
+            description: "Developed 3 production-grade applications serving thousands of users",
             icon: "🚀"
         },
         {
@@ -151,34 +139,24 @@ export const portfolioData = {
 
     certifications: [
         {
-            title: "Flutter Development Bootcamp",
+            title: "AdvancedFlutter Development",
             issuer: "Udemy",
-            year: "2020"
-        },
-        {
-            title: "Professional Mobile App Development",
-            issuer: "Coursera",
-            year: "2021"
-        },
-        {
-            title: "Firebase Advanced Course",
-            issuer: "Google Developers",
-            year: "2022"
+            year: "2026"
         }
     ],
 
     education: {
-        degree: "Bachelor of Technology in Computer Science",
-        institution: "University",
-        year: "2020",
-        gpa: "3.8/4.0"
+        degree: "Bachelor of Technology in Information Technology",
+        institution: "APJ Abdul Kalam Technological University",
+        year: "2021",
+        gpa: "6.87"
     },
 
     socialLinks: [
-        { platform: "GitHub", icon: "github", url: "https://github.com" },
-        { platform: "LinkedIn", icon: "linkedin", url: "https://linkedin.com" },
-        { platform: "Email", icon: "mail", url: "mailto:shobith.p@example.com" },
-        { platform: "Twitter", icon: "twitter", url: "https://twitter.com" }
+        { platform: "GitHub", icon: "github", url: "https://github.com/shobith10" },
+        { platform: "LinkedIn", icon: "linkedin", url: "https://www.linkedin.com/in/shobithp/" },
+        { platform: "Email", icon: "mail", url: "mailto:shobithknb99@gmail.com" },
+        // { platform: "Twitter", icon: "twitter", url: "https://twitter.com" }
     ],
 
     sections: [
