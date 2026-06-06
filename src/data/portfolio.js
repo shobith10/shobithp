@@ -17,7 +17,7 @@ export const portfolioData = {
         {
             title: "Lead Developer",
             company: "Grapes Innovative Solutions",
-            period: "Current",
+            period: "April 2023 - Current",
             responsibilities: ["Led development of multiple production-grade Flutter applications",
                 "Developed and maintained multiple cross-platform mobile applications using Flutter",
                 "Implemented hospital management system with patient records and appointment scheduling",
@@ -28,14 +28,13 @@ export const portfolioData = {
         {
             title: "Flutter Developer",
             company: "Techgebra",
-            period: "1.4 Years",
+            period: "Dec 2021 - March 2023",
             responsibilities: [
                 "Led development of multiple production-grade Flutter applications",
                 "Implemented Firebase integration for real-time data synchronization",
                 "Developed REST APIs and integrated backend services",
                  "Built e-commerce platform with payment integration and real-time inventory management",
                 "Created ERP solutions for business operations and resource planning",
-              
             ]
         },
       

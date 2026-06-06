@@ -12,6 +12,10 @@ export default function Navbar() {
         }
     };
 
+    const handleResumeClick = () => {
+        window.open('https://drive.google.com/file/d/1b4eZaC2sDuVO4eV29tC5PlfqxT-njUlM/view?usp=sharing', '_blank');
+    };
+
     return (
         <nav className="fixed top-0 w-full bg-white shadow-md z-50">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -41,7 +45,9 @@ export default function Navbar() {
 
                     {/* Resume Button & Mobile Menu Toggle */}
                     <div className="flex items-center gap-4">
-                        <button className="hidden sm:block px-4 py-2 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors font-medium text-sm">
+                        <button
+                            onClick={handleResumeClick}
+                            className="hidden sm:block px-4 py-2 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors font-medium text-sm">
                             Resume
                         </button>
 
@@ -69,7 +75,9 @@ export default function Navbar() {
                                 {section}
                             </button>
                         ))}
-                        <button className="w-full mt-2 mx-4 px-4 py-2 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors font-medium text-sm">
+                        <button
+                            onClick={handleResumeClick}
+                            className="w-full mt-2 mx-4 px-4 py-2 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors font-medium text-sm">
                             Resume
                         </button>
                     </div>
