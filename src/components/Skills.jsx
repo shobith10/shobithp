@@ -1,147 +1,124 @@
 import { portfolioData } from '../data/portfolio';
-import SkillBar from './common/SkillBar';
-import { useState, useRef } from 'react';
 
 export default function Skills() {
-    const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-    const containerRef = useRef(null);
-
-    const handleMouseMove = (e) => {
-        if (containerRef.current) {
-            const rect = containerRef.current.getBoundingClientRect();
-            setMousePos({
-                x: e.clientX - rect.left,
-                y: e.clientY - rect.top
-            });
+    const skillGroups = [
+        {
+            title: 'Mobile & UI',
+            skills: portfolioData.skills.mobile.map(skill => skill.name)
+        },
+        {
+            title: 'Architecture & APIs',
+            skills: portfolioData.skills.backend.map(skill => skill.name)
+        },
+        {
+            title: 'Tools & Delivery',
+            skills: portfolioData.skills.tools.map(skill => skill.name)
+        },
+        {
+            title: 'Leadership & Workflow',
+            skills: portfolioData.skills.soft
         }
-    };
-
-    const handleMouseLeave = () => {
-        setMousePos({ x: -1000, y: -1000 });
-    };
-
-    const allTechnicalSkills = [
-        ...portfolioData.skills.mobile,
-        ...portfolioData.skills.backend,
-        ...portfolioData.skills.tools,
-        ...portfolioData.skills.soft.map(skill => ({ name: skill }))
     ];
 
     return (
-        <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-gray-50">
+        <section id="skills" className="section-shell">
+            <p className="text-sm uppercase tracking-[0.3em] accent">/ skills</p>
+            <h2 className="section-heading">toolchain</h2>
+
+            <div className="skill-groups">
+                {skillGroups.map((group, index) => (
+                    <div className="skill-group" key={index}>
+                        <div className="skill-group-header">
+                            <span className="accent">//</span>
+                            <h3>{group.title}</h3>
+                        </div>
+
+                        <div className="skill-pills">
+                            {group.skills.map((skill, skillIndex) => (
+                                <span className="skill-pill" key={`${group.title}-${skillIndex}`}>
+                                    {skill}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
+                ))}
+            </div>
+
             <style>{`
-                @keyframes fadeInDown {
-                    from {
-                        opacity: 0;
-                        transform: translateY(-20px);
-                    }
-                    to {
-                        opacity: 1;
-                        transform: translateY(0);
-                    }
-                }
-
-                .section-title {
-                    animation: fadeInDown 0.6s ease-out;
-                }
-
-                .tech-skills-container {
-                    border: 3px solid rgba(59, 130, 246, 0.2);
-                    border-radius: 16px;
-                    padding: 40px;
-                    background: linear-gradient(135deg, rgba(59, 130, 246, 0.02) 0%, rgba(99, 102, 241, 0.02) 100%);
-                    animation: fadeInDown 0.8s ease-out;
-                    transition: border-color 0.3s ease;
-                }
-
-                .tech-skills-container:hover {
-                    border-color: rgba(59, 130, 246, 0.4);
-                }
-
-                .interactive-skills-grid {
+                .skill-groups {
                     display: grid;
-                    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-                    gap: 16px;
+                    grid-template-columns: repeat(2, minmax(0, 1fr));
+                    gap: 1.1rem;
+                    margin-top: 1.5rem;
                 }
 
-                .skill-wrapper {
-                    position: relative;
-                    transition: transform 0.1s ease-out;
+                .skill-group {
+                    background: rgba(15, 23, 42, 0.72);
+                    border: 1px solid rgba(96, 165, 250, 0.16);
+                    border-radius: 16px;
+                    padding: 1rem 1.1rem;
+                    box-shadow: inset 0 1px 0 rgba(148, 163, 184, 0.08);
+                    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
                 }
 
-              
-             
+                .skill-group:hover {
+                    transform: translateY(-2px);
+                    border-color: rgba(96, 165, 250, 0.32);
+                    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.12);
+                }
+
+                .skill-group-header {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.6rem;
+                    margin-bottom: 0.9rem;
+                    padding-bottom: 0.55rem;
+                    border-bottom: 1px solid rgba(148, 163, 184, 0.14);
+                }
+
+                .skill-group-header h3 {
+                    margin: 0;
+                    font-size: 0.88rem;
+                    font-weight: 700;
+                    letter-spacing: 0.08em;
+                    text-transform: uppercase;
+                    color: #e2e8f0;
+                }
+
+                .skill-pills {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 0.6rem;
+                }
+
+                .skill-pill {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 0.55rem 0.8rem;
+                    border-radius: 9999px;
+                    background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(14, 116, 144, 0.12));
+                    border: 1px solid rgba(96, 165, 250, 0.28);
+                    color: #e2e8f0;
+                    font-size: 0.76rem;
+                    font-weight: 600;
+                    letter-spacing: 0.02em;
+                    line-height: 1.2;
+                    transition: all 0.2s ease;
+                }
+
+                .skill-pill:hover {
+                    background: linear-gradient(135deg, rgba(59, 130, 246, 0.22), rgba(14, 116, 144, 0.18));
+                    border-color: rgba(96, 165, 250, 0.52);
+                    transform: translateY(-1px);
+                }
 
                 @media (max-width: 768px) {
-                    .tech-skills-container {
-                        padding: 24px;
+                    .skill-groups {
+                        grid-template-columns: 1fr;
                     }
-
-                    .interactive-skills-grid {
-                        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-                        gap: 12px;
-                    }
-
-                
                 }
             `}</style>
-            <div className="max-w-6xl mx-auto">
-                <h2 className="section-title text-4xl font-bold text-dark-900 mb-12">Technical Skills</h2>
-
-                {/* All Technical Skills in One Container */}
-                <div
-                    ref={containerRef}
-                    className="tech-skills-container"
-                    onMouseMove={handleMouseMove}
-                    onMouseLeave={handleMouseLeave}
-                >
-                    <div className="interactive-skills-grid">
-                        {allTechnicalSkills.map((skill, index) => (
-                            <div
-                                key={index}
-                                className="skill-wrapper"
-                                style={{
-                                    transform: mousePos.x > 0
-                                        ? (() => {
-                                            const skillElement = document.querySelector(`[data-skill-index="${index}"]`);
-                                            if (!skillElement) return 'translate(0, 0)';
-                                            const rect = skillElement.getBoundingClientRect();
-                                            const containerRect = containerRef.current.getBoundingClientRect();
-                                            const skillCenterX = rect.left - containerRect.left + rect.width / 2;
-                                            const skillCenterY = rect.top - containerRect.top + rect.height / 2;
-
-                                            const dx = skillCenterX - mousePos.x;
-                                            const dy = skillCenterY - mousePos.y;
-                                            const distance = Math.sqrt(dx * dx + dy * dy);
-                                            const force = Math.max(0, 100 - distance) / 100;
-                                            const angle = Math.atan2(dy, dx);
-
-                                            const moveX = Math.cos(angle) * force * 20;
-                                            const moveY = Math.sin(angle) * force * 20;
-
-                                            return `translate(${moveX}px, ${moveY}px)`;
-                                        })()
-                                        : 'translate(0, 0)'
-                                }}
-                            >
-                                <div data-skill-index={index}>
-                                    <SkillBar name={skill.name} />
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-
-                {/* Soft Skills Section
-                <div className="soft-skills-section">
-                    <h3 className="section-title text-2xl font-bold text-dark-900 mb-6">Soft Skills</h3>
-                    <div className="soft-skills-grid">
-                        {portfolioData.skills.soft.map((skill, index) => (
-                            <SkillBar key={index} name={skill} />
-                        ))}
-                    </div>
-                </div> */}
-            </div>
         </section>
     );
 }

@@ -9,9 +9,9 @@ import Contact from './components/Contact';
 
 function App() {
     return (
-        <div className="min-h-screen bg-white">
+        <div className="min-h-screen text-[#f3f4f6]">
             <Navbar />
-            <main className="pt-16">
+            <main className="mx-auto max-w-4xl px-4 pt-24 sm:px-6 lg:px-8">
                 <Hero />
                 <About />
                 <Experience />
@@ -20,16 +20,8 @@ function App() {
                 <Achievements />
                 <Contact />
 
-                {/* Footer */}
-                <footer className="bg-dark-900 text-white py-8 px-4">
-                    <div className="max-w-6xl mx-auto text-center">
-                        <p className="text-gray-400">
-                            © 2024 Shobith P. All rights reserved.
-                        </p>
-                        <p className="text-gray-500 text-sm mt-2">
-                            Designed & Built with React & Tailwind CSS
-                        </p>
-                    </div>
+                <footer className="border-t border-[#1f2d22] py-8 text-sm text-[#6b7280]">
+                    <p>© 2024 Shobith P. All rights reserved.</p>
                 </footer>
             </main>
         </div>
