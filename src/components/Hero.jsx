@@ -21,7 +21,7 @@ export default function Hero() {
                 <div className="flex flex-wrap gap-4 pt-2 text-sm">
                     <a href="#contact" className="soft-link">[ contact ]</a>
                     <a href="#projects" className="soft-link">[ projects ]</a>
-                    <a href="https://drive.google.com/file/d/19sIKc5Bvn9AydA68fWrmw9z4Y5XcgALw/view?usp=sharing" target="_blank" rel="noreferrer" className="soft-link">[ resume ]</a>
+                    <a href="https://drive.google.com/drive/u/1/folders/16-sn15irjaJY-KQrUgCeTGqwU0FXKEVG" target="_blank" rel="noreferrer" className="soft-link">[ resume ]</a>
                 </div>
 
                 <div className="pt-4">
